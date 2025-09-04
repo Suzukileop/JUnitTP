@@ -32,4 +32,19 @@ public class MoneyBag {
             }
         }
     }
+    
+    // Implémentez la méthode equals() (et hashCode())
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        MoneyBag moneyBag = (MoneyBag) obj;
+        // Compare les deux vecteurs. Cela nécessite que Money.equals() soit bien implémenté.
+        return fMonies.equals(moneyBag.fMonies);
+    }
+
+    @Override
+    public int hashCode() {
+        return fMonies.hashCode();
+    }
 }
